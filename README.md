@@ -14,14 +14,14 @@ This is a web-based **quiz application** built using **React.js** with **gamific
 Follow these steps to run the project locally:  
 
 ### 1️⃣ Clone the Repository  
-git clone https://github.com/njg37/quiz-app.git
-cd <your-project-folder>
+- git clone https://github.com/njg37/quiz-app.git
+- cd your_project_folder
 
 ### 2️⃣ Install Dependencies
-npm install
+- npm install
 
 ### 3️⃣ Start the Development Server
-npm start
+- npm start
 
 The app will run on http://localhost:3000/.
 
@@ -32,7 +32,7 @@ The app will run on http://localhost:3000/.
 ![Result Page UI](assets/resultPage.png)  
 
 ## 🎥 Demo Video
-📺 Watch the demo video here: [Insert Link]
+📺 Watch the demo video here: https://drive.google.com/file/d/1QRBtFms4NLCHX0m8Tk1VDeadYpimuSw6/view?usp=sharing
 
 ## 📌 Technologies Used
 - React.js ⚛️
