@@ -5,7 +5,7 @@
   text-align: center;
   font-family: 'Poppins', sans-serif;
   color: #fff;
-  background: linear-gradient(135deg, #1c1c1c, #2a2a72);
+  background: linear-gradient(135deg, #1c1c1c, #2a2a72); /* Dark gradient background */
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -16,19 +16,19 @@
 
 /* Result Card */
 .result-card {
-  background: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(10px);
+  background: rgba(255, 255, 255, 0.1); /* Semi-transparent background */
+  backdrop-filter: blur(10px); /* Blur effect on background */
   padding: 25px;
-  border-radius: 12px;
-  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.3);
+  border-radius: 12px; /* Rounded corners */
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.3); /* Subtle shadow */
   width: 90%;
   max-width: 500px;
   text-align: center;
-  transition: transform 0.3s ease-in-out;
+  transition: transform 0.3s ease-in-out; /* Smooth hover effect */
 }
 
 .result-card:hover {
-  transform: scale(1.02);
+  transform: scale(1.02); /* Slightly enlarge on hover */
 }
 
 /* Headings */
@@ -49,8 +49,8 @@
   font-size: 24px;
   font-weight: bold;
   margin: 20px 0;
-  color: #ffeb3b;
-  animation: fadeIn 1s ease-in-out;
+  color: #ffeb3b; /* Bright yellow for result message */
+  animation: fadeIn 1s ease-in-out; /* Animation for the result message */
 }
 
 /* Fade-in Animation */
@@ -71,50 +71,46 @@
 }
 
 .circle-progress {
-    width: 150px; 
+    width: 150px;
     height: 150px;
 }
 
 .circle-background, .circle-foreground {
-    transform: rotate(-90deg); /* Rotate to make it start from top */
+    transform: rotate(-90deg); /* Start from the top */
     transform-origin: 50% 50%; /* Ensure it rotates around the center */
 }
 
 .circle-background {
     fill: none;
-    stroke: #e6e6e6;
+    stroke: #e6e6e6; /* Light gray background for the circle */
     stroke-width: 10;
 }
 
 .circle-foreground {
     fill: none;
     stroke-width: 10;
-    stroke-linecap: round;
+    stroke-linecap: round; /* Rounded stroke ends */
     transition: stroke-dashoffset 1s ease-out, stroke 1s ease-in-out; /* Smooth transition */
 }
 
-/* Color based on progress */
+/* Default color for the progress circle */
 .circle-foreground {
-    /* Default color for 0% progress */
-    stroke: #ff0000;
-    /* Define a transition color gradient effect */
-    stroke: linear-gradient(90deg, #ff0000, #ff7e5f); /* Red to orange */
+    stroke: #ff0000; /* Initial red color */
 }
 
+/* Dynamic color change based on progress */
+.circle-progress-container .circle-foreground {
+    stroke: var(--progress-color, #ffeb3b); /* Default to yellow for progress */
+}
+
+/* Circle text styling */
 .circle-text {
-    font-size: 20px; /* Adjusted font size for clarity */
+    font-size: 20px;
     font-weight: bold;
     fill: #fff;
-    dominant-baseline: central; /* Ensures proper vertical centering */
-    text-anchor: middle; /* Center text horizontally */
+    dominant-baseline: central; /* Vertical center alignment */
+    text-anchor: middle; /* Horizontal center alignment */
 }
-
-/* Add a color change based on progress percentage */
-.circle-progress-container .circle-foreground {
-    stroke: var(--progress-color, #ffeb3b); /* Default color */
-}
-
-
 
 /* Buttons (Scoped) */
 .result-action-buttons {
@@ -124,7 +120,7 @@
 }
 
 .result-action-button {
-  background: linear-gradient(90deg, #ff7e5f, #feb47b);
+  background: linear-gradient(90deg, #ff7e5f, #feb47b); /* Gradient background */
   color: white;
   border: none;
   padding: 12px 20px;
@@ -132,44 +128,45 @@
   font-weight: 600;
   cursor: pointer;
   border-radius: 8px;
-  transition: all 0.3s ease-in-out;
-  box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease-in-out; /* Smooth hover and transition */
+  box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.2); /* Shadow for depth */
 }
 
 .result-action-button:hover {
-  transform: scale(1.05);
-  background: linear-gradient(90deg, #feb47b, #ff7e5f);
-  box-shadow: 0px 5px 12px rgba(0, 0, 0, 0.3);
+  transform: scale(1.05); /* Slightly scale up on hover */
+  background: linear-gradient(90deg, #feb47b, #ff7e5f); /* Reverse gradient */
+  box-shadow: 0px 5px 12px rgba(0, 0, 0, 0.3); /* Stronger shadow */
 }
 
 /* Home Button */
 .home-button {
-  background: #007bff;
+  background: #007bff; /* Blue background for home button */
   color: white;
 }
 
+/* Retry Button */
 .retry-button {
-  background: #dc3545;
+  background: #dc3545; /* Red background for retry button */
   color: white;
 }
 
-/* Responsive Design */
+/* Responsive Design for smaller screens */
 @media (max-width: 768px) {
   .result-card {
-    width: 95%;
+    width: 95%; /* Use more space for smaller screens */
   }
 
   .result-page-container h2 {
-    font-size: 1.8rem;
+    font-size: 1.8rem; /* Adjust font size for smaller screens */
   }
 
   .result-page-container p {
-    font-size: 18px;
+    font-size: 18px; /* Adjust font size for readability */
   }
 
   .result-action-button {
-    width: 90%;
-    font-size: 16px;
-    padding: 10px 18px;
+    width: 90%; /* Make buttons wider */
+    font-size: 16px; /* Smaller font size */
+    padding: 10px 18px; /* Adjust padding */
   }
 }

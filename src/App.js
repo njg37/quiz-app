@@ -8,8 +8,13 @@ function App() {
   return (
     <Router>
       <Routes>
+        {/* Route for the home page */}
         <Route path="/" element={<Home />} />
+
+        {/* Route for the quiz page */}
         <Route path="/quiz" element={<QuizPage />} />
+
+        {/* Route for the result page */}
         <Route path="/result" element={<ResultPage />} />
       </Routes>
     </Router>

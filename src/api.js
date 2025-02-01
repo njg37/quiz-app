@@ -6,15 +6,17 @@ export const fetchQuizData = async () => {
   try {
     const response = await axios.get(API_URL);
 
+    // Check if the response contains a valid 'questions' array
     if (!response.data || !Array.isArray(response.data.questions)) {
       console.error("Invalid API Response: Missing or malformed 'questions' array.");
       return [];
     }
 
+    // Process each question
     return response.data.questions.map((q, index) => {
-      // Try to find the correct answer in the options
       let correctAnswer = null;
 
+      // Try to find the correct answer in the options
       if (Array.isArray(q.options)) {
         const correctOption = q.options.find(option => option.is_correct === true);
         if (correctOption) {
@@ -35,11 +37,11 @@ export const fetchQuizData = async () => {
       }
 
       return {
-        question: q.description || "Missing Question",
+        question: q.description || "Missing Question",  // Default if question description is missing
         options: q.options?.map((option) =>
           typeof option === "object" ? option.description || "Invalid Option" : option
-        ) || [],
-        correct_answer: correctAnswer,
+        ) || [], // Default if options are malformed
+        correct_answer: correctAnswer, // Return the correct answer
       };
     });
   } catch (error) {

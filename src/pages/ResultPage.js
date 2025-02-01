@@ -7,6 +7,7 @@ function ResultPage() {
   const navigate = useNavigate();
   const { score, total } = location.state || { score: 0, total: 0 };
 
+  // Function to determine the message based on score percentage
   const getMessage = () => {
     const percentage = (score / total) * 100;
     if (percentage === 100) return "🎉 Perfect Score! You're a Quiz Master!";
@@ -42,7 +43,7 @@ function ResultPage() {
             strokeDasharray={440}
             strokeDashoffset={440 - (percentage / 100) * 440}
             style={{
-              stroke: getProgressColor(percentage), // Dynamically set the color
+              stroke: getProgressColor(percentage), // Dynamically set the color based on percentage
             }}
           />
           <text
@@ -60,7 +61,9 @@ function ResultPage() {
       <p className="result-message">{getMessage()}</p>
 
       <div className="result-action-buttons">
+        {/* Button to navigate home */}
         <button className="result-action-button home" onClick={() => navigate("/")}>🏠 Home</button>
+        {/* Button to navigate to retry quiz */}
         <button className="result-action-button retry" onClick={() => navigate("/quiz")}>🔄 Retry</button>
       </div>
     </div>

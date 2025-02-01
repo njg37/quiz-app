@@ -19,6 +19,7 @@ function QuizPage() {
   );
   const navigate = useNavigate();
 
+  // Fetch quiz data on mount
   useEffect(() => {
     const loadQuizData = async () => {
       try {
@@ -36,58 +37,65 @@ function QuizPage() {
     loadQuizData();
   }, []);
 
+  // Timer countdown for each question
   useEffect(() => {
     const timer = setInterval(() => {
       setTimeLeft((prev) => (prev > 0 ? prev - 1 : 0));
     }, 1000);
 
-    return () => clearInterval(timer);
+    return () => clearInterval(timer); // Cleanup on unmount
   }, [currentQuestionIndex]);
 
+  // Move to next question when time is up
   useEffect(() => {
     if (timeLeft === 0) {
-      handleNextQuestion(false); // Auto move to next question
+      handleNextQuestion(false); // Auto move to next question if time is up
     }
   }, [timeLeft]);
 
+  // Update high score when score changes
   useEffect(() => {
     setHighScore(Math.max(highScore, score));
     localStorage.setItem("highScore", Math.max(highScore, score));
   }, [score]);
 
+  // Handle answer selection
   const handleAnswerClick = (answer) => {
     setSelectedAnswer(answer);
   };
 
+  // Handle moving to next question, checking if answer is correct
   const handleNextQuestion = (isCorrect) => {
     if (quizData.length === 0) return;
-  
+
     const isCorrectAnswer = selectedAnswer === quizData[currentQuestionIndex]?.correct_answer;
-  
+
     if (isCorrect && isCorrectAnswer) {
       setScore(score + 1);
       setStreak(streak + 1);
     } else {
-      setStreak(0); // Reset streak if wrong
+      setStreak(0); // Reset streak if answer is wrong
     }
-  
-    setTimeLeft(15);
+
+    setTimeLeft(15); // Reset timer for the next question
     setSelectedAnswer(null);
-  
-    // Check if it's the last question
+
+    // Check if it's the last question, otherwise move to the next one
     if (currentQuestionIndex < quizData.length - 1) {
       setCurrentQuestionIndex((prevIndex) => prevIndex + 1);
     } else {
-      // For the last question, navigate to the result page and pass the score
+      // Navigate to result page with score and streak
       setTimeout(() => {
         navigate("/result", { state: { score: score + (isCorrect && isCorrectAnswer ? 1 : 0), total: quizData.length, streak: streak } });
       }, 100);
     }
   };
-  
+
+  // Handle loading and error states
   if (loading) return <h2>Loading...</h2>;
   if (error) return <h2>Error: {error}</h2>;
 
+  // Calculate progress percentage
   const progressPercentage = ((currentQuestionIndex + 1) / totalQuestions) * 100;
 
   return (
