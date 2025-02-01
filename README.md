@@ -26,7 +26,10 @@ npm start
 The app will run on http://localhost:3000/.
 
 ## 🖼 Screenshots
-Add screenshots of the quiz interface, questions, and results here.
+![Home Page UI](assets/HomePage.png)  
+![Quiz Page UI 1](assets/question1Page.png)  
+![Quiz Page UI 2](assets/question2Page.png)  
+![Result Page UI](assets/resultPage.png)  
 
 ## 🎥 Demo Video
 📺 Watch the demo video here: [Insert Link]
