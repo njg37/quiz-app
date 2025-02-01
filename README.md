@@ -32,13 +32,13 @@ Add screenshots of the quiz interface, questions, and results here.
 📺 Watch the demo video here: [Insert Link]
 
 ## 📌 Technologies Used
-React.js ⚛️
-Axios for API requests
-Framer Motion for animations
-Local Storage for high-score tracking
+- React.js ⚛️
+- Axios for API requests
+- Framer Motion for animations
+- Local Storage for high-score tracking
 
 🏆 High Score Tracking
-The app automatically saves the highest score in local storage and displays it on the home page.
+- The app automatically saves the highest score in local storage and displays it on the home page.
 
 
 🎉 Thank you! 🚀 Enjoy the quiz!
