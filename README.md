@@ -25,13 +25,13 @@ npm start
 
 The app will run on http://localhost:3000/.
 
-🖼 Screenshots
+## 🖼 Screenshots
 Add screenshots of the quiz interface, questions, and results here.
 
-🎥 Demo Video
+## 🎥 Demo Video
 📺 Watch the demo video here: [Insert Link]
 
-📌 Technologies Used
+## 📌 Technologies Used
 React.js ⚛️
 Axios for API requests
 Framer Motion for animations
