@@ -1,13 +1,13 @@
 # 🧠 Quiz App with Gamification 🎮  
 
 ## 🚀 Overview  
-This is a web-based **quiz application** built using **React.js** with **gamification features** to enhance user engagement. The app fetches quiz questions from an API and provides an interactive experience with animations, sound effects, and score tracking.  
+This is a web-based **quiz application** built using **React.js** with **gamification features** to enhance user engagement. The app fetches quiz questions from an API and provides an interactive experience with animations and score tracking.  
 
 ## 🔥 Features  
 ✅ Fetches quiz data from an API using Axios  
 ✅ Multiple-choice questions with instant feedback  
 ✅ Score calculation and high-score tracking using local storage  
-✅ Gamification elements like animations and sound effects  
+✅ Gamification elements like animations  
 ✅ Responsive design for all devices  
 
 ## 📜 Installation & Setup  
@@ -39,9 +39,6 @@ The app will run on http://localhost:3000/.
 - Axios for API requests
 - Framer Motion for animations
 - Local Storage for high-score tracking
-
-🏆 High Score Tracking
-- The app automatically saves the highest score in local storage and displays it on the home page.
 
 
 🎉 Thank you! 🚀 Enjoy the quiz!
